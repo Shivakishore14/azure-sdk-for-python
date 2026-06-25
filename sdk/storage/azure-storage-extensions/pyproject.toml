@@ -70,6 +70,7 @@ enable = ["pypy"]
 test-requires = "pytest"
 test-command = "pytest {project}/tests"
 environment = "CFLAGS='-Wno-implicit-function-declaration'"
+build-verbosity = 2
 
 [tool.cibuildwheel.linux]
 archs = "x86_64 aarch64"

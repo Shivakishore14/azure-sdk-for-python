@@ -243,7 +243,7 @@ def create_package(
         if enable_wheel and setup_parsed.ext_modules:
             # Use cibuildwheel for compiled extensions (respects [tool.cibuildwheel] config)
             run_logged(
-                [sys.executable, "-m", "cibuildwheel", "--output-dir", dist],
+                [sys.executable, "-vv", "-m", "cibuildwheel", "--output-dir", dist],
                 cwd=setup_parsed.folder,
                 check=True,
                 should_stream_to_console=should_log_build_output,
