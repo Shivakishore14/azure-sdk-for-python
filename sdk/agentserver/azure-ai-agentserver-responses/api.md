@@ -275,7 +275,7 @@ namespace azure.ai.agentserver.responses
                 response_id: str, 
                 event: StreamEventRecord, 
                 *, 
-                context: PlatformContext | None = ...,
+                context: PlatformContext | None = ..., 
                 ttl_seconds: int | None = ...
             ) -> bool: ...
 
@@ -283,7 +283,7 @@ namespace azure.ai.agentserver.responses
                 self, 
                 execution: ResponseExecution, 
                 *, 
-                context: PlatformContext | None = ...,
+                context: PlatformContext | None = ..., 
                 ttl_seconds: int | None = ...
             ) -> None: ...
 
@@ -297,9 +297,9 @@ namespace azure.ai.agentserver.responses
             ) -> None: ...
 
         async def delete(
-                self,
-                response_id: str,
-                *,
+                self, 
+                response_id: str, 
+                *, 
                 context: PlatformContext | None = ...
             ) -> bool: ...
 
@@ -311,9 +311,9 @@ namespace azure.ai.agentserver.responses
             ) -> None: ...
 
         async def get_execution(
-                self,
-                response_id: str,
-                *,
+                self, 
+                response_id: str, 
+                *, 
                 context: PlatformContext | None = ...
             ) -> ResponseExecution | None: ...
 
@@ -345,9 +345,9 @@ namespace azure.ai.agentserver.responses
             ) -> list[OutputItem | None]: ...
 
         async def get_replay_events(
-                self,
-                response_id: str,
-                *,
+                self, 
+                response_id: str, 
+                *, 
                 context: PlatformContext | None = ...
             ) -> list[StreamEventRecord] | None: ...
 
@@ -368,7 +368,7 @@ namespace azure.ai.agentserver.responses
                 self, 
                 response_id: str, 
                 *, 
-                context: PlatformContext | None = ...,
+                context: PlatformContext | None = ..., 
                 ttl_seconds: int | None = ...
             ) -> bool: ...
 
@@ -377,7 +377,7 @@ namespace azure.ai.agentserver.responses
                 response_id: str, 
                 response: ResponseObject, 
                 *, 
-                context: PlatformContext | None = ...,
+                context: PlatformContext | None = ..., 
                 ttl_seconds: int | None = ...
             ) -> bool: ...
 
@@ -386,7 +386,7 @@ namespace azure.ai.agentserver.responses
                 response_id: str, 
                 next_status: ResponseStatus, 
                 *, 
-                context: PlatformContext | None = ...,
+                context: PlatformContext | None = ..., 
                 ttl_seconds: int | None = ...
             ) -> bool: ...
 
@@ -404,9 +404,14 @@ namespace azure.ai.agentserver.responses
                 self, 
                 *, 
                 call_id: str | None = ..., 
-                original_subject: FoundryOriginalSubject | None = ...,
+                original_subject: FoundryOriginalSubject | None = ..., 
                 user_id_key: str | None = ...
             ) -> None: ...
+
+
+    class azure.ai.agentserver.responses.ResponseCheckpointEvent:
+
+        def __init__(self, response: ResponseObject) -> None: ...
 
 
     class azure.ai.agentserver.responses.ResponseContext:
@@ -561,7 +566,7 @@ namespace azure.ai.agentserver.responses
                 *, 
                 code: str = "server_error", 
                 message: str = "An internal server error occurred.", 
-                metadata: Mapping[str, str] | None = ...,
+                metadata: Mapping[str, str] | None = ..., 
                 usage: ResponseUsage | None = ...
             ) -> ResponseFailedEvent: ...
 
@@ -979,7 +984,7 @@ namespace azure.ai.agentserver.responses.aio
                 *, 
                 code: str = "server_error", 
                 message: str = "An internal server error occurred.", 
-                metadata: Mapping[str, str] | None = ...,
+                metadata: Mapping[str, str] | None = ..., 
                 usage: ResponseUsage | None = ...
             ) -> ResponseFailedEvent: ...
 
@@ -1554,7 +1559,7 @@ namespace azure.ai.agentserver.responses.aio.streaming
                 *, 
                 code: str = "server_error", 
                 message: str = "An internal server error occurred.", 
-                metadata: Mapping[str, str] | None = ...,
+                metadata: Mapping[str, str] | None = ..., 
                 usage: ResponseUsage | None = ...
             ) -> ResponseFailedEvent: ...
 
@@ -6609,6 +6614,11 @@ namespace azure.ai.agentserver.responses.streaming
         def emit_refusal_done(self, final_refusal: str) -> ResponseRefusalDoneEvent: ...
 
 
+    class azure.ai.agentserver.responses.streaming.ResponseCheckpointEvent:
+
+        def __init__(self, response: ResponseObject) -> None: ...
+
+
     class azure.ai.agentserver.responses.streaming.ResponseEventStream:
         property internal_metadata: MutableMapping[str, Any]    # Read-only
         property response: dict[str, Any]    # Read-only
@@ -6706,7 +6716,7 @@ namespace azure.ai.agentserver.responses.streaming
                 *, 
                 code: str = "server_error", 
                 message: str = "An internal server error occurred.", 
-                metadata: Mapping[str, str] | None = ...,
+                metadata: Mapping[str, str] | None = ..., 
                 usage: ResponseUsage | None = ...
             ) -> ResponseFailedEvent: ...
 

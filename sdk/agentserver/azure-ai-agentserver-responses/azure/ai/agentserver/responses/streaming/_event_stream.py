@@ -289,7 +289,7 @@ class ResponseEventStream:  # pylint: disable=too-many-public-methods
         checkpoint never overrides it.
 
         :returns: The checkpoint event to yield.
-        :rtype: ~azure.ai.agentserver.responses.streaming._checkpoint.ResponseCheckpointEvent
+        :rtype: ~azure.ai.agentserver.responses.streaming.ResponseCheckpointEvent
         """
         return ResponseCheckpointEvent(cast("response_models.ResponseObject", self._response))
 

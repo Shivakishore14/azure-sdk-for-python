@@ -30,6 +30,7 @@ from .store._foundry_provider import FoundryStorageProvider
 from .store._foundry_settings import FoundryStorageSettings
 from .store._memory import InMemoryResponseProvider
 from .streaming._event_stream import ResponseEventStream
+from .streaming._checkpoint import ResponseCheckpointEvent
 from .streaming._text_response import TextResponse
 
 if TYPE_CHECKING:
@@ -54,6 +55,7 @@ __all__ = [
     "FoundryBadRequestError",
     "FoundryApiError",
     "ResponseEventStream",
+    "ResponseCheckpointEvent",
     "TextResponse",
     "CreateResponse",
     "ResponseObject",

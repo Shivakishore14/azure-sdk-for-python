@@ -1,6 +1,6 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT license.
-"""Internal checkpoint event for developer-driven persistence.
+"""Checkpoint control event for developer-driven persistence.
 
 ``ResponseEventStream.checkpoint()`` returns a :class:`ResponseCheckpointEvent`
 that the handler yields like any other stream event. The orchestrator intercepts
@@ -25,6 +25,9 @@ class ResponseCheckpointEvent:
     Carries a reference to the stream's live ``ResponseObject``; the orchestrator
     snapshots and persists it (for resilient background responses only). Never
     serialised to the wire.
+
+    :param response: The live response envelope to checkpoint.
+    :type response: ~azure.ai.agentserver.responses.models.ResponseObject
     """
 
     __slots__ = ("response",)

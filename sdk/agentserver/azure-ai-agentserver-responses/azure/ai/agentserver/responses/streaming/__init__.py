@@ -22,6 +22,7 @@ from ._builders import (
 from ._event_stream import (
     ResponseEventStream,
 )
+from ._checkpoint import ResponseCheckpointEvent
 
 __all__ = [
     "TextContentBuilder",
@@ -40,4 +41,5 @@ __all__ = [
     "OutputItemMcpListToolsBuilder",
     "OutputItemCustomToolCallBuilder",
     "ResponseEventStream",
+    "ResponseCheckpointEvent",
 ]
